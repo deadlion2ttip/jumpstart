@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
+int main(int argc, char *argv[])
 {
-    printf("Hello world!\n");
+     printf("%s %s", argv[1], argv[2]);
     return 0;
 }
