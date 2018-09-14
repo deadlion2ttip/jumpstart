@@ -1,26 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
-char *strcat(char *dest, const char *src);
-
-
-int main(int *argc, char *argv[])
+int main(int argc, char *argv[])
 {
-    if (argv[1]){
-
-        char fileName[30];
-        char fileEnd[] = ".html";
-        strcpy(fileName, argv[1]);
-        strcat(fileName, fileEnd);
-        printf("%s", fileName);
-
-        FILE * fpointer = fopen(("%s", fileName), "w");
-
-
-        fclose(fpointer);
-    } else {
-        printf("Please provide a file name as the first argument.");
-    }
+     printf("%s %s", argv[1], argv[2]);
     return 0;
 }
