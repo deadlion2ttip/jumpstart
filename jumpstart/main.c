@@ -3,6 +3,26 @@
 
 int main(int argc, char *argv[])
 {
-     printf("%s %s", argv[1], argv[2]);
+    if (argv[1]){
+
+        char fileName[30];
+        char fileEnd[] = ".html";
+        strcpy(fileName, argv[1]);
+        strcat(fileName, fileEnd);
+        printf("%s", fileName);
+
+
+       if(fopen(("%s", fileName), "r")){
+        printf("File Already Exists. Canceling write.");
+       }else {
+
+        FILE * fpointer = fopen(("%s", fileName), "w");
+
+
+        fclose(fpointer);
+       }
+    } else {
+        printf("Please provide a file name as the first argument.");
+    }
     return 0;
 }
