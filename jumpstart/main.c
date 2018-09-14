@@ -15,10 +15,16 @@ int main(int *argc, char *argv[])
         strcat(fileName, fileEnd);
         printf("%s", fileName);
 
+
+       if(fopen(("%s", fileName), "r")){
+        printf("File Already Exists. Canceling write.");
+       }else {
+
         FILE * fpointer = fopen(("%s", fileName), "w");
 
 
         fclose(fpointer);
+       }
     } else {
         printf("Please provide a file name as the first argument.");
     }
