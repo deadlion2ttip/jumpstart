@@ -20,7 +20,21 @@ int main(int argc, char *argv[])
        if(fopen(("%s", fileName), "r")){
         printf("File Already Exists. Canceling write.");
        }else {
-/*create new files*/
+/*copy template files*/
+        char html[2000];
+        char css[200];
+
+        FILE * htmlTemplate = fopen("C:/Users/cigma/code/playing around/C/jumpstart/jumpstart/template.html", "r");
+        FILE * cssTemplate = fopen("C:/Users/cigma/code/playing around/C/jumpstart/jumpstart/template.css", "r");
+/* fgets stops on newline. create a loop that reads template line by line to a variable, then concatinates that variable at every line read to a master variable that is then written to the new file.*/
+        fgets(html, 2000, htmlTemplate);
+        fgets(css, 200, cssTemplate);
+
+        printf("%p", htmlTemplate);
+
+        fclose(htmlTemplate);
+        fclose(cssTemplate);
+
         FILE * htmlPointer = fopen(("%s", fileName), "w");
 
 
